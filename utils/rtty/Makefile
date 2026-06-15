@@ -46,6 +46,8 @@ Package/rtty-wolfssl/conffiles = $(Package/rtty-openssl/conffiles)
 Package/rtty-mbedtls/conffiles = $(Package/rtty-openssl/conffiles)
 Package/rtty-nossl/conffiles = $(Package/rtty-openssl/conffiles)
 
+CMAKE_OPTIONS += -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 ifeq ($(BUILD_VARIANT),openssl)
   CMAKE_OPTIONS += -DUSE_OPENSSL=ON
 else ifeq ($(BUILD_VARIANT),wolfssl)
